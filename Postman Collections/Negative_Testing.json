@@ -168,6 +168,30 @@
     },
     {
       "name": "Register without password",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "976e6969-ebde-4f3c-ae6c-1ea9a32531b9",
+            "exec": [
+              "pm.test(\"Status code is 400\", () => {",
+              "    pm.response.to.have.status(400);",
+              "})",
+              "",
+              "pm.test(\"Response payload is in JSON format\", () => {",
+              "    pm.expect(pm.response).to.be.an(\"object\");",
+              "})",
+              "",
+              "",
+              "",
+              "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+              "    pm.expect(pm.response.responseTime).to.below(2000);",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
       "id": "980f4924-c0d1-4647-b3eb-a86b5ed54748",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
