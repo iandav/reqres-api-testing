@@ -165,62 +165,6 @@
         "url": "https://reqres.in/api/unknown/23"
       },
       "response": []
-    },
-    {
-      "name": "Register without password",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "id": "976e6969-ebde-4f3c-ae6c-1ea9a32531b9",
-            "exec": [
-              "pm.test(\"Status code is 400\", () => {",
-              "    pm.response.to.have.status(400);",
-              "})",
-              "",
-              "pm.test(\"Response payload is in JSON format\", () => {",
-              "    pm.expect(pm.response).to.be.an(\"object\");",
-              "})",
-              "",
-              "pm.test(\"Response body should have only an 'error' property\", () => {",
-              "    pm.expect(pm.response.json()).to.have.all.keys(\"error\")",
-              "})",
-              "",
-              "pm.test(\"Response body 'error' property has expected value\", () => {",
-              "    pm.expect(pm.response.json().error).to.equal(\"Missing password\");",
-              "})",
-              "",
-              "pm.test(\"Response body 'error property has expected data type\", () => {",
-              "    pm.expect(pm.response.json().error).to.be.a(\"string\");",
-              "})",
-              "",
-              "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
-              "    pm.expect(pm.response.responseTime).to.below(2000);",
-              "})"
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "id": "980f4924-c0d1-4647-b3eb-a86b5ed54748",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"email\": \"sydney@fife\"\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": "https://reqres.in/api/register"
-      },
-      "response": []
     }
   ]
 }
