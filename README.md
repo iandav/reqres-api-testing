@@ -16,4 +16,5 @@ The scope of the project includes testing the following functionalities of the R
   <li>Basic Security and Authentication</li>
 </ul>
 
-## Test Environment
+## Test Strategy
+
