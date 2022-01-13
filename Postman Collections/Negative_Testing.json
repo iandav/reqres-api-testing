@@ -167,7 +167,7 @@
       "response": []
     },
     {
-      "name": "New Request",
+      "name": "Register without password",
       "id": "980f4924-c0d1-4647-b3eb-a86b5ed54748",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
