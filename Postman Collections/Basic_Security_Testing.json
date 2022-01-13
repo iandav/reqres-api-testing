@@ -1,0 +1,717 @@
+{
+  "info": {
+    "_postman_id": "caa61dd0-5a82-4a30-a966-9e979ce426ce",
+    "name": "Basic Security Testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "12 of 51 Invalid combinations to update a user",
+      "item": [
+        {
+          "name": "name: valid, job: invalid",
+          "item": [
+            {
+              "name": "name: string, job: numbers",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "246267be-87ca-486f-9ad7-6b655cb26c22",
+                    "exec": [
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "11165200-d0ca-4f15-b805-c1ded286b977",
+                    "exec": [
+                      "pm.test(\"Status code is 400 (Bad Request)\", () => {",
+                      "    pm.response.to.have.status(400);",
+                      "})",
+                      "",
+                      "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+                      "    pm.expect(pm.response.responseTime).to.below(2000);",
+                      "})"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "534c78a5-608c-4e6d-9f51-bb8085d61050",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"morpheus\",\n    \"job\": \"123\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "https://reqres.in/api/users/2"
+              },
+              "response": []
+            },
+            {
+              "name": "name: string, job: symbols",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "bac926e0-3432-4d14-ab57-6b2576043643",
+                    "exec": [
+                      "pm.test(\"Status code is 400 (Bad Request)\", () => {",
+                      "    pm.response.to.have.status(400);",
+                      "})",
+                      "",
+                      "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+                      "    pm.expect(pm.response.responseTime).to.below(2000);",
+                      "})"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "5bcf9128-f2db-4504-80e8-22fe5ec06100",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"morpheus\",\n    \"job\": \"&&\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "https://reqres.in/api/users/2"
+              },
+              "response": []
+            },
+            {
+              "name": "name: srtring, job: numbers + symbols",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "49f10bc9-c1a7-45e3-805a-0488cb08793f",
+                    "exec": [
+                      "pm.test(\"Status code is 400 (Bad Request)\", () => {",
+                      "    pm.response.to.have.status(400);",
+                      "})",
+                      "",
+                      "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+                      "    pm.expect(pm.response.responseTime).to.below(2000);",
+                      "})"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "8745d0b4-1468-4ddc-855f-bf1f5df2e806",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"morpheus\",\n    \"job\": \"11%\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "https://reqres.in/api/users/2"
+              },
+              "response": []
+            },
+            {
+              "name": "name: string, job: numbers + characters",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "3eb4b7c4-34e4-42b2-8028-cf7c5cac94f1",
+                    "exec": [
+                      "pm.test(\"Status code is 400 (Bad Request)\", () => {",
+                      "    pm.response.to.have.status(400);",
+                      "})",
+                      "",
+                      "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+                      "    pm.expect(pm.response.responseTime).to.below(2000);",
+                      "})"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "512c683c-e833-4c88-883e-4a336b26ac15",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"morpheus\",\n    \"job\": \"123abc\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "https://reqres.in/api/users/2"
+              },
+              "response": []
+            },
+            {
+              "name": "name: string, job: numbers + symbols + characters",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "bce8f698-f299-4f57-993e-fb4988d1b4b9",
+                    "exec": [
+                      "pm.test(\"Status code is 400 (Bad Request)\", () => {",
+                      "    pm.response.to.have.status(400);",
+                      "})",
+                      "",
+                      "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+                      "    pm.expect(pm.response.responseTime).to.below(2000);",
+                      "})"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "cbc0ed6a-69fe-4eed-b98f-934077c06731",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"morpheus\",\n    \"job\": \"aa12&%$\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "https://reqres.in/api/users/2"
+              },
+              "response": []
+            },
+            {
+              "name": "name: string, job: characters + symbols",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "376d9570-cb66-47e0-91af-bbfe37f95146",
+                    "exec": [
+                      "pm.test(\"Status code is 400 (Bad Request)\", () => {",
+                      "    pm.response.to.have.status(400);",
+                      "})",
+                      "",
+                      "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+                      "    pm.expect(pm.response.responseTime).to.below(2000);",
+                      "})"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "569132e3-64a1-4807-942c-a9ea560af861",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"morpheus\",\n    \"job\": \"abc$$$\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "https://reqres.in/api/users/2"
+              },
+              "response": []
+            }
+          ],
+          "_postman_id": "bab7000c-bdd0-447a-b43d-19e2fb173d21",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "name: invalid, job: valid",
+          "item": [
+            {
+              "name": "name: numbers, job: string",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "be96d874-1240-4aeb-afc2-b2a011e24ab3",
+                    "exec": [
+                      "pm.test(\"Status code is 400 (Bad Request)\", () => {",
+                      "    pm.response.to.have.status(400);",
+                      "})",
+                      "",
+                      "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+                      "    pm.expect(pm.response.responseTime).to.below(2000);",
+                      "})"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "c68bbeb8-9642-4f05-afad-ccda10eeb1b5",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"123\",\n    \"job\": \"carpenter\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "https://reqres.in/api/users/2"
+              },
+              "response": []
+            },
+            {
+              "name": "name: symbols, job: string",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "f1f3bfab-c8bc-4d0d-803f-18272c2dc396",
+                    "exec": [
+                      "pm.test(\"Status code is 400 (Bad Request)\", () => {",
+                      "    pm.response.to.have.status(400);",
+                      "})",
+                      "",
+                      "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+                      "    pm.expect(pm.response.responseTime).to.below(2000);",
+                      "})"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "4c3b5cf8-f3a5-4d18-a1e6-268e64e05219",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"!··_\",\n    \"job\": \"carpenter\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "https://reqres.in/api/users/2"
+              },
+              "response": []
+            },
+            {
+              "name": "name: numbers + symbols, job: string",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "a9700007-e9e7-4826-8efd-15b0c201919e",
+                    "exec": [
+                      "pm.test(\"Status code is 400 (Bad Request)\", () => {",
+                      "    pm.response.to.have.status(400);",
+                      "})",
+                      "",
+                      "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+                      "    pm.expect(pm.response.responseTime).to.below(2000);",
+                      "})"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "9a72c72d-ad85-415d-8f94-ac2feca8b46f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"!123\",\n    \"job\": \"carpenter\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "https://reqres.in/api/users/2"
+              },
+              "response": []
+            },
+            {
+              "name": "name: numbers + characters, job: string",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "f30575fe-5d64-4597-9068-45c1b1be9ca4",
+                    "exec": [
+                      "pm.test(\"Status code is 400 (Bad Request)\", () => {",
+                      "    pm.response.to.have.status(400);",
+                      "})",
+                      "",
+                      "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+                      "    pm.expect(pm.response.responseTime).to.below(2000);",
+                      "})"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "5bdcc5a6-d797-476a-8a6b-c8b98bcccec5",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"11John\",\n    \"job\": \"carpenter\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "https://reqres.in/api/users/2"
+              },
+              "response": []
+            },
+            {
+              "name": "name: numbers + symbols + characters, job: string",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "e9799cbe-3246-409f-8518-b68e01aa59da",
+                    "exec": [
+                      "pm.test(\"Status code is 400 (Bad Request)\", () => {",
+                      "    pm.response.to.have.status(400);",
+                      "})",
+                      "",
+                      "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+                      "    pm.expect(pm.response.responseTime).to.below(2000);",
+                      "})"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "dbee3ae9-8a73-4f07-b7ae-537a7556faa7",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"11John%%_-\",\n    \"job\": \"carpenter\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "https://reqres.in/api/users/2"
+              },
+              "response": []
+            },
+            {
+              "name": "name: characters + symbols, job: string",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "ee1a81a4-c943-419a-b50a-10bfe73b0ae1",
+                    "exec": [
+                      "pm.test(\"Status code is 400 (Bad Request)\", () => {",
+                      "    pm.response.to.have.status(400);",
+                      "})",
+                      "",
+                      "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+                      "    pm.expect(pm.response.responseTime).to.below(2000);",
+                      "})"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "700eb47d-50fe-4296-80f0-3074854e4c59",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"John!!$\",\n    \"job\": \"carpenter\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "https://reqres.in/api/users/2"
+              },
+              "response": []
+            }
+          ],
+          "_postman_id": "e49db635-b3cc-488e-88b0-7159f0946465",
+          "_postman_isSubFolder": true
+        }
+      ],
+      "_postman_id": "b0ae707c-454e-4fe2-8be2-01f1bd766436",
+      "description": "TEST SCENARIO: When a user updates information, the inputs (name) and (job) have to be filled only with alphabet characters. If not, then application has to send a \"401 BAD REQUEST\" status code.\n\nTEST STRATEGY: Test all combinations of invalid inputs, using decision table technique.\n\ninvalid inputs:\n\n1) Numbers: 1,2,3  \n2) Symbols: &,/,$  \n3) Numbers and Symbols: 1·  \n4) Numbers and Characters: a1  \n5) Numbers and Symbols and Characters: 1q$  \n6) Characters and Symbols: a$\n\nInvalid combinations using multiplication principle (simultaneous):\n\nuser: T (only characters) |  \njob: F (6 invalid possibilites) | TOTAL = 6 test cases\n\nuser: F ( 6 invalid posibilites) |  \njob: T (only characters) | TOTAL = 6 test cases\n\nuser: F (6 invalid posibilites) |  \njob: F (6 invalid posibilites) | TOTAL = 36 test cases\n\nTOTAL TEST CASES = 48 + 3 (3 combinations of null inputs) = 51"
+    },
+    {
+      "name": "Check Security headers",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "a9f9c983-a17f-463d-a6fd-f2a1a1656430",
+            "exec": [
+              "pm.test(\"Status code is 200 OK\", () => {",
+              "    pm.response.to.have.status(200);",
+              "})",
+              "",
+              "pm.test(\"Response payload has JSON format\", () => {",
+              "    pm.expect(pm.response).to.be.an(\"object\");",
+              "})",
+              "",
+              "pm.test(\"Response body contains only and only one 'token' property\", () => {",
+              "    pm.expect(pm.response.json()).to.have.all.keys(\"token\");",
+              "})",
+              "",
+              "/*  With 'Strict-Transport-Security' header the server accepts an HTTP request",
+              "    and inmediately redirects the users to HTTPS to avoid MITM (Man in the middle",
+              "    attacks:",
+              "*/",
+              "",
+              "pm.test(\"Strict-Transport-Security header is present to prevent MITM\", () => {",
+              "    pm.response.to.have.header(\"Strict-Transport-Security\");",
+              "})",
+              "",
+              "/*",
+              "'X-XSS-Protection' header prevents XSS attacks:",
+              "*/",
+              "",
+              "pm.test(\"'X-XSS-Protection' header is present to prevent XSS atacks\", () => {",
+              "    pm.response.to.have.header(\"X-XSS-Protection\");",
+              "})",
+              "",
+              "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+              "    pm.expect(pm.response.responseTime).to.below(2000);",
+              "})",
+              "",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "67f2b252-ca84-4e0c-b9dc-cf043937c6c7",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"eve.holt@reqres.in\",\n    \"password\": \"cityslicka\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://reqres.in/api/login"
+      },
+      "response": []
+    },
+    {
+      "name": "Login only with email field",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "5e4faba2-c7eb-495e-8471-798fd1cb1039",
+            "exec": [
+              "pm.test(\"Status code is 400\", () => {",
+              "    pm.response.to.have.status(400);",
+              "})",
+              "",
+              "pm.test(\"Response payload is in JSON format\", () => {",
+              "    pm.expect(pm.response).to.be.an(\"object\");",
+              "})",
+              "",
+              "pm.test(\"Response body has expected property name\", () => {",
+              "    pm.expect(pm.response.json()).to.have.property(\"error\")",
+              "})",
+              "",
+              "pm.test(\"Response body 'error' property has expected value\", () => {",
+              "    pm.expect(pm.response.json().error).to.equal(\"Missing password\");",
+              "})",
+              "",
+              "pm.test(\"Response body 'error' property value has expected data type\", () => {",
+              "    pm.expect(pm.response.json().error).to.be.a(\"string\");",
+              "})",
+              "",
+              "pm.test(\"Response body has one and only one expected property\", () => {",
+              "    pm.expect(pm.response.json()).to.have.all.keys(\"error\");",
+              "})",
+              "",
+              "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+              "    pm.expect(pm.response.responseTime).to.below(2000);",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "369e57ec-5d14-4f78-bd4e-82d1a7b8d998",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"peter@klaven\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://reqres.in/api/login"
+      },
+      "response": []
+    },
+    {
+      "name": "Register only with email field",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "b0715868-ed6b-462e-8ae9-4137c916da95",
+            "exec": [
+              "pm.test(\"Status code is 400\", () => {",
+              "    pm.response.to.have.status(400);",
+              "})",
+              "",
+              "pm.test(\"Response payload is in JSON format\", () => {",
+              "    pm.expect(pm.response).to.be.an(\"object\");",
+              "})",
+              "",
+              "pm.test(\"Response body has expected property name\", () => {",
+              "    pm.expect(pm.response.json()).to.have.property(\"error\")",
+              "})",
+              "",
+              "pm.test(\"Response body 'error' property has expected value\", () => {",
+              "    pm.expect(pm.response.json().error).to.equal(\"Missing password\");",
+              "})",
+              "",
+              "pm.test(\"Response body 'error' property value has expected data type\", () => {",
+              "    pm.expect(pm.response.json().error).to.be.a(\"string\");",
+              "})",
+              "",
+              "pm.test(\"Response body has one and only one expected property\", () => {",
+              "    pm.expect(pm.response.json()).to.have.all.keys(\"error\");",
+              "})",
+              "",
+              "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+              "    pm.expect(pm.response.responseTime).to.below(2000);",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "436b1066-9383-43c9-a784-41158b8fc0e9",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "0726f40c-2ccd-42c5-b220-b4b745aeacda",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"sydney@fife\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://reqres.in/api/register"
+      },
+      "response": []
+    }
+  ]
+}
