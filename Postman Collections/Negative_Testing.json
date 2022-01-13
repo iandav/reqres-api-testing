@@ -1,0 +1,170 @@
+{
+  "info": {
+    "_postman_id": "7e8e2711-3716-435e-9b7a-38a26566821d",
+    "name": "Negative Testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get an inexistent user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "5aeb072a-2c15-4444-8856-42a24a0d4906",
+            "exec": [
+              "pm.test(\"Status code is 404 (Not Found)\", () => {",
+              "    pm.response.to.have.status(404);",
+              "})",
+              "",
+              "pm.test(\"Response payload is in JSON format\", () => {",
+              "    pm.expect(pm.response).to.be.an(\"object\");",
+              "})",
+              "",
+              "pm.test(\"Response body is an empty object\", () => {",
+              "    pm.expect(pm.response.headers.get(\"Content-Length\")).to.equal(\"2\");",
+              "})",
+              "",
+              "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+              "    pm.expect(pm.response.responseTime).to.below(2000);",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "7d2bbad7-2c9b-4b4e-bea6-1ced7c11bb1b",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://reqres.in/api/users/23"
+      },
+      "response": []
+    },
+    {
+      "name": "Get an inexistent list of users",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "b4a648a5-8809-4fa1-9441-3795c83ef7ad",
+            "exec": [
+              "pm.test(\"Response code is 200 OK\", () => {",
+              "    pm.response.to.have.status(200);",
+              "})",
+              "",
+              "pm.test(\"Response body is in JSON format\", () => {",
+              "    pm.expect(pm.response).to.be.an(\"object\");",
+              "})",
+              "",
+              "// Response body in JSON format",
+              "const body = pm.response.json();",
+              "",
+              "pm.test(\"Response body property names are as expected\", () => {",
+              "    pm.expect(body).to.have.property(\"page\");",
+              "    pm.expect(body).to.have.property(\"per_page\");",
+              "    pm.expect(body).to.have.property(\"total\");",
+              "    pm.expect(body).to.have.property(\"total_pages\");",
+              "    pm.expect(body).to.have.property(\"data\");",
+              "})",
+              "",
+              "pm.test(\"Response body property values are as expected\", () => {",
+              "    pm.expect(body.page).to.equal(999);",
+              "    pm.expect(body.per_page).to.equal(6);",
+              "    pm.expect(body.total).to.equal(12);",
+              "    pm.expect(body.total_pages).to.equal(2);",
+              "    pm.expect(body.data).to.be.an(\"array\");",
+              "})",
+              "",
+              "pm.test(\"Response body property values have correct data types\", () => {",
+              "    pm.expect(body.page).to.be.a(\"number\");",
+              "    pm.expect(body.per_page).to.be.a(\"number\");",
+              "    pm.expect(body.total).to.be.a(\"number\");",
+              "    pm.expect(body.total_pages).to.be.a(\"number\");",
+              "    pm.expect(body.data).to.be.an(\"array\");",
+              "})",
+              "",
+              "pm.test(\"Response body 'data' property doesn't display users\", () => {",
+              "    pm.expect(body.data).to.be.empty;",
+              "})",
+              "",
+              "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+              "    pm.expect(pm.response.responseTime).to.below(2000);",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "21e0c0a2-813e-45db-ba03-9e6f3ba249a3",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://reqres.in/api/users?page=999",
+          "protocol": "https",
+          "host": [
+            "reqres",
+            "in"
+          ],
+          "path": [
+            "api",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "999"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get an inexistent path",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "1c8c6e92-a43e-4f8b-8366-8c55320496fc",
+            "exec": [
+              "pm.test(\"Status code is 404\", () => {",
+              "    pm.response.to.have.status(404);",
+              "})",
+              "",
+              "pm.test(\"Response payload is in JSON format\", () => {",
+              "    pm.expect(pm.response).to.be.an(\"object\");",
+              "})",
+              "",
+              "pm.test(\"Response body is an empty object\", () => {",
+              "    pm.expect(pm.response.headers.get(\"Content-Length\")).to.equal(\"2\");",
+              "})",
+              "",
+              "pm.test(\"Response time is acceptable (below 2000ms)\", () => {",
+              "    pm.expect(pm.response.responseTime).to.below(2000);",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "a976bd3a-70da-43ad-9eb1-3b5ea6bd0e34",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://reqres.in/api/unknown/23"
+      },
+      "response": []
+    }
+  ]
+}
