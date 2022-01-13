@@ -33,7 +33,7 @@
           }
         }
       ],
-      "_postman_id": "7d2bbad7-2c9b-4b4e-bea6-1ced7c11bb1b",
+      "id": "7d2bbad7-2c9b-4b4e-bea6-1ced7c11bb1b",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -99,7 +99,7 @@
           }
         }
       ],
-      "_postman_id": "21e0c0a2-813e-45db-ba03-9e6f3ba249a3",
+      "id": "21e0c0a2-813e-45db-ba03-9e6f3ba249a3",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -155,7 +155,7 @@
           }
         }
       ],
-      "_postman_id": "a976bd3a-70da-43ad-9eb1-3b5ea6bd0e34",
+      "id": "a976bd3a-70da-43ad-9eb1-3b5ea6bd0e34",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -163,6 +163,19 @@
         "method": "GET",
         "header": [],
         "url": "https://reqres.in/api/unknown/23"
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "id": "980f4924-c0d1-4647-b3eb-a86b5ed54748",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": null
       },
       "response": []
     }
