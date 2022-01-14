@@ -5,7 +5,7 @@
   <li><a href="#ontroduction">Introduction</a></li>
   <li><a href="#scope">Scope</a></li>
   <li><a href="#test-strategy">Test Strategy</a></li>
-  <li><a href="#run-tests/collections-on-your-computer-using-newman">Run tests/collections on your computer using newman</a></li>
+  <li><a href="#run-testscollections-on-your-computer-using-newman">Run tests/collections on your computer using newman</a></li>
   <li><a href="#test-results">Test Results</a></li>
 </ul>
 
