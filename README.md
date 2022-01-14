@@ -1,10 +1,10 @@
 # reqres-api-testing
 
 ## Introduction
-This is a practical personal project to practice the concepts of API Testing. The API is called "Reqres" and you can access here https://reqres.in/ to view its functionalities and expected responses from the server.
+This is a practical personal project to practice basic concepts of API Testing. The API is called "Reqres" and you can access [here](https://reqres.in/) to view its functionalities and expected responses from the server. The main tools/technologies used are Postman, Newman, JavaScript and Chai BDD.
 
 ## Scope
-The scope of the project includes testing the following functionalities of the Reqres API:
+The scope of the project includes testing the following functionalities of the API:
 <ul>
   <li>Login</li>
   <li>Register</li>
@@ -17,7 +17,7 @@ The scope of the project includes testing the following functionalities of the R
 </ul>
 
 ## Test Strategy
-Creating Test Scenarios and Test Cases for the different features listed before, including different testing design techniques such as:
+Creating Test Scenarios and Test Cases for the different features listed before, including different test case design techniques such as:
 <ul>
   <li>Equivalence Class Partition</li>
   <li>Decision Tables</li>
@@ -26,12 +26,15 @@ Creating Test Scenarios and Test Cases for the different features listed before,
   <li>Error Guessing</li>
 </ul>
 
-(Considering that the application is in a stable version, Smoke Testing has been omitted in this project.)
-<br/>Almost every request in the Test Case must contain the following actions:
-1) Verify expected HTTP status code.
-2) Verify the response payload.
-3) Verify important headers.
-4) Verify acceptable response time.
+Almost every request in the Test Cases must contain the following actions:
+<ol>
+  <li>Verify expected HTTP status code.</li>
+  <li>Verify the response payload.</li>
+  <li>Verify important headers (optional).</li>
+  <li>Verify acceptable response time.</li>
+</ol>
+
+(Considering that the application is in a stable version, Smoke Testing has been omitted.)
 
 ## Run tests/collections on your computer using newman
 1. Install [Nodejs](https://nodejs.org/)
