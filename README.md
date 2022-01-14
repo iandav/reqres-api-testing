@@ -39,10 +39,22 @@ Almost every request in the Test Cases must contain the following actions:
 ## Run tests/collections on your computer using newman
 1. Install [Nodejs](https://nodejs.org/)
 2. Install newman with npm: <code>npm install -g newman</code>
-3. Clone this repository: <code>git clone https://github.com/iandav/reqres-api-testing/</code>
-4. Run .json collections: <code>newman run collection_name.json</code> 
+3. Install newman html reporter: <code>npm install -g newman-reporter-html</code>
+4. Clone this repository: <code>git clone https://github.com/iandav/reqres-api-testing/</code>
+5. Run .json collections: <code>newman run collection_name.json -r html</code>
+6. View test results created in the project folder as an html file.
 
 ## Test Results
+|  | Total | Failed |
+| --- | --- | --- |
+| Iterations | 1 | 0 |
+| Requests | 15 | 0 |
+| Prerequest Scripts | 2 | 0 |
+| Test Scripts | 15 | 0 |
+| Assertions | 44 | 14 |
 
-## Problems
+| Total Failures: |
+| --- |
+| 14 |
+
 
