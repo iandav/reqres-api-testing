@@ -17,4 +17,25 @@ The scope of the project includes testing the following functionalities of the R
 </ul>
 
 ## Test Strategy
+Creating Test Scenarios and Test Cases for the different features listed before, including different testing design techniques such as:
+<ul>
+  <li>Equivalence Class Partition</li>
+  <li>Decision Tables</li>
+  <li>Positive/Negative Testing</li>
+  <li>Basic Security Testing</li>
+  <li>Error Guessing</li>
+</ul>
+
+(Considering that the application is in a stable version, Smoke Testing has been omitted in this project.)
+<br/>Almost every request in the Test Case must contain the following actions:
+1) Verify expected HTTP status code.
+2) Verify the response payload.
+3) Verify important headers.
+4) Verify acceptable response time.
+
+## Run tests using newman
+<code>npm install newman</code>
+
+
+## Test Results
 
