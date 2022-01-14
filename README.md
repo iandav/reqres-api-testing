@@ -35,10 +35,11 @@ Creating Test Scenarios and Test Cases for the different features listed before,
 
 ## Run tests/collections on your computer using newman
 1. Install [Nodejs](https://nodejs.org/)
-2. Install newman using npm: <code>npm install -g newman</code>
-3. Clone this repository using git: <code>git clone https://github.com/iandav/reqres-api-testing/</code>
-4. 
-
+2. Install newman with npm: <code>npm install -g newman</code>
+3. Clone this repository: <code>git clone https://github.com/iandav/reqres-api-testing/</code>
+4. Run .json collections: <code>newman run collection_name.json</code> 
 
 ## Test Results
+
+## Problems
 
