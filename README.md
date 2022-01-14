@@ -1,5 +1,13 @@
 # reqres-api-testing
 
+# Overview
+<ul>
+  <li><a href="">Introduction</a></li>
+  <li><a href="">Scope</a></li>
+  <li><a href="">Test Strategy</a></li>
+  <li><a href="">Run tests/collections on your computer using newman</a></li>
+  <li><a href="">Test Results</a></li>
+</ul>
 ## Introduction
 This is a practical personal project to practice basic concepts of API Testing. The API is called "Reqres" and you can access [here](https://reqres.in/) to view its functionalities and expected responses from the server. The main tools/technologies used are Postman, Newman, JavaScript and Chai BDD.
 
